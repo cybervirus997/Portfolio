@@ -4,8 +4,9 @@ import {
 } from '../theme/theme'
 
 
+
 export const themeData = {
-    theme: orangeThemeDark
+    theme: redThemeDark 
 }
 
 

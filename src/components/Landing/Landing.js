@@ -68,27 +68,27 @@ function Landing() {
                 <div className="landing--container-left" style={{backgroundColor: theme.primary}}>
                     <div className="lcl--content">
                         {socialsData.linkedIn && (
-                            <a href={socialsData.linkedIn} target="_blank" rel="noreferrer">
+                            <a href="https://www.linkedin.com/in/soumya-ranjan-purohit-90a3a194/" target="_blank" rel="noreferrer">
                                 <FaLinkedin className="landing--social" style={{color: theme.secondary}}/>
                             </a>
                         )}
                         {socialsData.github && (
-                            <a href={socialsData.github} target="_blank" rel="noreferrer">
+                            <a href="https://github.com/cybervirus997" target="_blank" rel="noreferrer">
                                 <FaGithub className="landing--social" style={{color: theme.secondary}}/>
                             </a>
                         )}
                         {socialsData.twitter && (
-                            <a href={socialsData.twitter} target="_blank" rel="noreferrer">
+                            <a href="#." target="_blank" rel="noreferrer">
                                 <FaTwitter className="landing--social" style={{color: theme.secondary}}/>
                             </a>
                         )}
                         {socialsData.youtube && (
-                            <a href={socialsData.youtube} target="_blank" rel="noreferrer">
+                            <a href="#" target="_blank" rel="noreferrer">
                                 <FaYoutube className="landing--social" style={{color: theme.secondary}}/>
                             </a>
                         )}
                         {socialsData.blogger && (
-                            <a href={socialsData.blogger} target="_blank" rel="noreferrer">
+                            <a href="#" target="_blank" rel="noreferrer">
                                 <FaBlogger className="landing--social" style={{color: theme.secondary}}/>
                             </a>
                         )}
@@ -97,19 +97,25 @@ function Landing() {
                 <img src={headerData.image} alt="" className="landing--img" style={{ opacity: `${drawerOpen ? '0' : '1'}`, borderColor: theme.secondary}}/>
                 <div className="landing--container-right" style={{backgroundColor: theme.secondary}}>
                     <div className="lcr--content" style={{color: theme.tertiary}}>
-                        <h6>{headerData.title}</h6>
-                        <h1>{headerData.name}</h1>
-                        <p>{headerData.desciption}</p>
+                        <h6 style={{textAlign:"center",marginTop:"20%"}} >{headerData.title}</h6>
+                        <h1 style={{textAlign:"center"}}>{headerData.name}</h1>
+                        <p style={{textAlign:"center"}}>{headerData.desciption}</p>
 
-                        <div className="lcr-buttonContainer">
+                        <div style={{marginLeft:'10%'}} className="lcr-buttonContainer">
                             {headerData.resumePdf && (
                                 <a href={headerData.resumePdf} download="resume" target="_blank" rel="noreferrer">
+                                   
                                     <Button className={classes.resumeBtn}>Download CV</Button>
+                                    
                                 </a>
                             )}
                             <NavLink to="/#contacts" smooth={true} spy="true" duration={2000}>
                                 <Button className={classes.contactBtn}>Contact</Button>
                             </NavLink>
+                             <div smooth={true} spy="true" duration={2000}>
+                                <Button className={classes.contactBtn}  >ThemeChanger</Button>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>

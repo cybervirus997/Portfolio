@@ -12,14 +12,14 @@ export const servicesData = [
     //     title: 'Marketing',
     //     icon: <BiShoppingBag/>
     // },
-    {
-        id: 2,
-        title: 'Content Writing',
-        icon: <BiPencil /> 
-    },
+    // {
+    //     id: 2,
+    //     title: 'Content Writing',
+    //     icon: <BiPencil /> 
+    // },
     {
         id: 3,
-        title: 'Email Marketing',
+        title: 'Making Electronic Bots',
         icon: <AiOutlineMail />
     },
     // {
@@ -58,21 +58,21 @@ export const servicesData = [
     //     title: 'Data Entry', 
     //     icon: <BsClipboardData />
     // },
-    {
-        id: 11,
-        title: 'Ebook Writing',
-        icon: <FaTabletAlt />
-    },
+    // {
+    //     id: 11,
+    //     title: 'Ebook Writing',
+    //     icon: <FaTabletAlt />
+    // },
     // {
     //     id: 12,
     //     title: 'Audio Transcription',
     //     icon: <AiFillAudio />
     // },
-    {
-        id: 13,
-        title: 'Blog Posting',
-        icon: <FaRegNewspaper />
-    },
+    // {
+    //     id: 13,
+    //     title: 'Blog Posting',
+    //     icon: <FaRegNewspaper />
+    // },
 
 ]
 
