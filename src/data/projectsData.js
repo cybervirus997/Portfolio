@@ -12,16 +12,16 @@ export const projectsData = [
     {
         id: 1,
         projectName: 'OnBikes',
-        projectDesc: 'This project aims to build an employee management system that consolidates all information of a company',
+        projectDesc: 'This project is the clone of ONN Bikes which is the most affordable bike rental company in India. They specialize in motorcycle rental, from short-term motorbike rental to long-term hiring or leasing, from bike tours to bike maintenance and service.',
         tags: ["Html","css","javascript"],
-        // code: 'https://github.com/hhhrrrttt222111/developer-portfolio',
-        // demo: 'https://github.com/hhhrrrttt222111/developer-portfolio',
+        code: 'https://github.com/Rahul3105/Onn_bikes_clone',
+        demo: 'https://rahul3105.github.io/Onn_bikes_clone/',
         image: eight
     },
     {
         id: 2,
         projectName: 'Project OLX',
-        projectDesc: 'This project is a railway tracking system that allows users to obtain relevant information about train timing.',
+        projectDesc: 'The OLX marketplace is a platform for buying and selling services and goods such as electronics, fashion items, furniture, household goods, cars and bikes. This Project is assigned to us by masai during the construct week.',
         tags: ["React","Express.js","Node.js","Bootstrap"],
         // code: 'https://github.com/hhhrrrttt222111/developer-portfolio',
         // demo: 'https://github.com/hhhrrrttt222111/developer-portfolio',
@@ -30,10 +30,10 @@ export const projectsData = [
     {
         id: 3,
         projectName: 'Project Pluralsight',
-        projectDesc: 'Weather forecast systems and applications predict weather conditions based on multiple parameters.',
+        projectDesc: '',
         tags: ["EJS","Node.js","mongoDB"],
-        code: 'https://github.com/hhhrrrttt222111/developer-portfolio',
-        demo: 'https://github.com/hhhrrrttt222111/developer-portfolio',
+        code: 'https://github.com/biswajitdas-007/Pluralsight',
+        // demo: 'https://github.com/hhhrrrttt222111/developer-portfolio',
         image: three
     },
     // {
