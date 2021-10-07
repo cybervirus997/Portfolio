@@ -1,4 +1,6 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
+ import Typewriter from "typewriter-effect";
+
 import { Button } from '@material-ui/core'
 import { NavHashLink as NavLink } from 'react-router-hash-link';
 import { makeStyles } from '@material-ui/core/styles';
@@ -12,7 +14,19 @@ import { FaTwitter, FaLinkedin, FaGithub, FaYoutube, FaBlogger } from "react-ico
 
 
 function Landing() {
-    const { theme, drawerOpen }  = useContext(ThemeContext)
+    const { theme, drawerOpen } = useContext(ThemeContext);
+    const [dev, setDev] = useState("FullStack Web Developer");
+    let i = 0;
+    const arr = ["Frontend developer", "Backend developer", "FullStack Web Developer"];
+    // setInterval(() => {
+    //     if (i===2) {
+    //         setDev(arr[0])
+    //         i=0;
+    //     } else {
+    //         setDev(arr[i])
+    //         i++;
+    //     }
+    // },2000)
 
     const useStyles = makeStyles((t) => ({
         resumeBtn : {
@@ -63,8 +77,8 @@ function Landing() {
     const classes = useStyles();
 
     return (
-        <div className="landing" >
-            <div className="landing--container">
+        <div className="landing col-12" >
+            <div className="landing--container col-12">
                 <div className="landing--container-left" style={{backgroundColor: theme.primary}}>
                     <div className="lcl--content">
                         {socialsData.linkedIn && (
@@ -95,25 +109,50 @@ function Landing() {
                     </div>
                 </div>
                 <img src={headerData.image} alt="" className="landing--img" style={{ opacity: `${drawerOpen ? '0' : '1'}`, borderColor: theme.secondary}}/>
-                <div className="landing--container-right" style={{backgroundColor: theme.secondary}}>
+                <div className="landing--container-right col-4" style={{backgroundColor: theme.secondary}}>
                     <div className="lcr--content" style={{color: theme.tertiary}}>
-                        <h6 style={{textAlign:"center",marginTop:"20%"}} >{headerData.title}</h6>
-                        <h1 style={{textAlign:"center"}}>{headerData.name}</h1>
-                        <p style={{textAlign:"center"}}>{headerData.desciption}</p>
+                        {/* <h6 style={{textAlign:"center",marginTop:"20%",color:"transparent"}} >{headerData.title}</h6> */}
+                        <div className="col-12" style={{textAlign:"center",marginTop:"20%"}}>  <img src="https://raw.githubusercontent.com/tal-zvon/tal-zvon/main/assets/Hand_Wave.gif" width="20%"  alt="" />  </div>
+                        <h1 style={{ textAlign: "center" }}>{headerData.name}</h1>
+                        <div style={{ textAlign: "center" }}>
+                            <h3>I am a
+                            <Typewriter
+                            options={{
+                                strings: [
+                                "FrontEnd Developer",
+                                "Backend Developer",
+                                "Electronics and comm. Engineer",
+                                "MERN Stack Developer",
+                                ],
+                                autoStart: true,
+                                loop: true,
+                                deleteSpeed: 50,
+                            }}
+                            />
+                            </h3>
+                            
+                        </div>
+                        {/* <p style={{ textAlign: "center", color: "transparent" }}>{headerData.desciption}</p> */}
+                        
 
-                        <div style={{marginLeft:'10%'}} className="lcr-buttonContainer">
-                            {headerData.resumePdf && (
+
+                        <div style={{position:"relative",width:"100%",marginBottom:"10%"}} className="lcr-buttonContainer">
+                            <div>
+                                {headerData.resumePdf && (
                                 <a href={headerData.resumePdf} download="resume" target="_blank" rel="noreferrer">
                                    
                                     <Button className={classes.resumeBtn}>Download CV</Button>
                                     
                                 </a>
                             )}
-                            <NavLink to="/#contacts" smooth={true} spy="true" duration={2000}>
+                            </div>
+                            <div>
+                                <NavLink to="/#contacts" smooth={true} spy="true" duration={2000}>
                                 <Button className={classes.contactBtn}>Contact</Button>
                             </NavLink>
+                            </div>
                              <div smooth={true} spy="true" duration={2000}>
-                                <Button className={classes.contactBtn}  >ThemeChanger</Button>
+                                <Button className={classes.contactBtn} >ThemeChanger</Button>
                             </div>
                             
                         </div>
