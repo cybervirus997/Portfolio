@@ -1,14 +1,7 @@
 export const socialsData = {
-    // github: 'https://github.com/',
-    // facebook: 'https://www.facebook.com/',
-    // linkedIn: 'https://www.linkedin.com/in',
-    // instagram: 'https://www.instagram.com/',
-    // codepen: 'https://codepen.io/',
-    // twitter: 'https://twitter.com/',
-    // reddit: 'https://www.reddit.com/user/',
-    // blogger: 'https://www.blogger.com/',
-    // medium: 'https://medium.com/@',
-    // stackOverflow: 'https://stackoverflow.com/users/',
-    // gitlab: 'https://gitlab.com/',
-    // youtube: 'https://youtube.com/'
+    github: 'https://github.com/cybervirus997',
+    linkedIn: 'https://www.linkedin.com/in/soumya-ranjan-purohit-90a3a194/',
+    codepen: 'https://codepen.io/cybervirus997',
+    reddit: 'https://codesandbox.io/dashboard/home?workspace=4721c2e1-372b-4efa-9c95-8850d5860204',
+    stackOverflow: 'https://stackoverflow.com/users/14299916/soumyaranjan-purohit',
 }

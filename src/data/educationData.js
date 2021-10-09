@@ -16,7 +16,7 @@ export const educationData = [
     {
         id: 3,
         institution: 'Kendriya Vidyalaya',
-        course: 'Higher secoundary/secoundary/primary schooling',
+        course: 'Schooling',
         startYear: '2005',
         endYear: '2015'
     },

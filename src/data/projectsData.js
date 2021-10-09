@@ -16,77 +16,40 @@ export const projectsData = [
         tags: ["Html","css","javascript"],
         code: 'https://github.com/Rahul3105/Onn_bikes_clone',
         demo: 'https://rahul3105.github.io/Onn_bikes_clone/',
-        image: eight
+        image: "https://user-images.githubusercontent.com/77793810/122582987-67230a00-d076-11eb-8079-a43185265951.PNG"
     },
     {
         id: 2,
         projectName: 'Project OLX',
         projectDesc: 'The OLX marketplace is a platform for buying and selling services and goods such as electronics, fashion items, furniture, household goods, cars and bikes. This Project is assigned to us by masai during the construct week.',
         tags: ["React","Express.js","Node.js","Bootstrap"],
-        // code: 'https://github.com/hhhrrrttt222111/developer-portfolio',
-        // demo: 'https://github.com/hhhrrrttt222111/developer-portfolio',
-        image: six
+        code: 'https://github.com/cybervirus997/Olx',
+        demo: 'https://projectolx.vercel.app/',
+        image: "https://user-images.githubusercontent.com/72969348/135753076-b32dfd7d-545d-42b6-9b0b-37b8cc8f700b.png"
     },
     {
         id: 3,
         projectName: 'Project Pluralsight',
-        projectDesc: '',
+        projectDesc: 'Pluralsight, Inc. is an American privately held online education company that offers a variety of video training courses for software developers, IT administrators, and creative professionals through its website. ',
         tags: ["EJS","Node.js","mongoDB"],
         code: 'https://github.com/biswajitdas-007/Pluralsight',
         // demo: 'https://github.com/hhhrrrttt222111/developer-portfolio',
-        image: three
+        image: "https://github.com/biswajitdas-007/pluralsight_clone/raw/master/Screenshots/Screenshot%202021-08-22%20at%2011.46.01%20AM.png?raw=true"
     },
-    // {
-    //     id: 4,
-    //     projectName: 'Android Patient Tracker',
-    //     projectDesc: 'This project involves the development of an Android application for viewing and managing patient data.',
-    //     tags: ['Flutter', 'Firebase'],
-    //     code: 'https://github.com/hhhrrrttt222111/developer-portfolio',
-    //     demo: 'https://github.com/hhhrrrttt222111/developer-portfolio',
-    //     image: four
-    // },
-    // {
-    //     id: 5,
-    //     projectName: 'E-Commerce App',
-    //     projectDesc: 'A Simple E-commerce application',
-    //     tags: ['React Native', 'Firebase'],
-    //     code: 'https://github.com/hhhrrrttt222111/developer-portfolio',
-    //     demo: 'https://github.com/hhhrrrttt222111/developer-portfolio',
-    //     image: five
-    // },
-    // {
-    //     id: 6,
-    //     projectName: 'Uber Lite',
-    //     projectDesc: 'Uber clone',
-    //     tags: ['Flutter'],
-    //     code: 'https://github.com/hhhrrrttt222111/developer-portfolio',
-    //     demo: 'https://github.com/hhhrrrttt222111/developer-portfolio',
-    //     image: six
-    // },
-    // {
-    //     id: 7,
-    //     projectName: 'Stock Market App',
-    //     projectDesc: 'A simple stock market API app',
-    //     tags: ['React', 'Redux', 'Bootstrap'],
-    //     code: 'https://github.com/hhhrrrttt222111/developer-portfolio',
-    //     demo: 'https://github.com/hhhrrrttt222111/developer-portfolio',
-    //     image: seven
-    // },
-    // {
-    //     id: 8,
-    //     projectName: 'Car Pooling System',
-    //     projectDesc: 'The carpooling system merges multiple people in a car which leads to meet new people, reduces pollution',
-    //     tags: ['Flutter', 'React'],
-    //     code: 'https://github.com/hhhrrrttt222111/developer-portfolio',
-    //     demo: 'https://github.com/hhhrrrttt222111/developer-portfolio',
-    //     image: eight
-    // },
+    {
+        id: 4,
+        projectName: 'Project MightyCause',
+        projectDesc: 'Mightycause is online fundraising software for empowering nonprofits, people, and the causes they believe in. We tried to clone the Mightycause website from the scratch. A user can create his/her porfile and create any number of events they want from their dashboard.',
+        tags: ["React.js","material.ui"],
+        code: 'https://github.com/cybervirus997/Mightycause',
+        // demo: 'https://github.com/hhhrrrttt222111/developer-portfolio',
+        image: "https://user-images.githubusercontent.com/77038954/129859566-716f10fe-7b02-465f-962e-981da3632e85.png"
+    },
 ]
 
 
-// Do not remove any fields.
-// Leave it blank instead as shown below
 
+//schema for entwreing data
 /* 
 {
     id: 1,

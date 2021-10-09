@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react'
- import Typewriter from "typewriter-effect";
+import React, { useContext,createContext, useState } from 'react'
+import Typewriter from "typewriter-effect";
 
 import { Button } from '@material-ui/core'
 import { NavHashLink as NavLink } from 'react-router-hash-link';
@@ -9,24 +9,18 @@ import './Landing.css'
 import { ThemeContext } from '../../contexts/ThemeContext'
 import { headerData } from '../../data/headerData'
 import { socialsData } from '../../data/socialsData'
+import { trigHandler } from "../../data/themeData"
 
-import { FaTwitter, FaLinkedin, FaGithub, FaYoutube, FaBlogger } from "react-icons/fa";
+import { FaAngleRight,FaTwitter, FaLinkedin, FaGithub, FaYoutube, FaBlogger } from "react-icons/fa";
 
 
 function Landing() {
     const { theme, drawerOpen } = useContext(ThemeContext);
-    const [dev, setDev] = useState("FullStack Web Developer");
-    let i = 0;
-    const arr = ["Frontend developer", "Backend developer", "FullStack Web Developer"];
-    // setInterval(() => {
-    //     if (i===2) {
-    //         setDev(arr[0])
-    //         i=0;
-    //     } else {
-    //         setDev(arr[i])
-    //         i++;
-    //     }
-    // },2000)
+    const [variable, setVariable] = useState(4);
+
+    const handlevariable = () => {
+        setVariable(variable + 1);
+    }
 
     const useStyles = makeStyles((t) => ({
         resumeBtn : {
@@ -79,6 +73,7 @@ function Landing() {
     return (
         <div className="landing col-12" >
             <div className="landing--container col-12">
+
                 <div className="landing--container-left" style={{backgroundColor: theme.primary}}>
                     <div className="lcl--content">
                         {socialsData.linkedIn && (
@@ -88,7 +83,7 @@ function Landing() {
                         )}
                         {socialsData.github && (
                             <a href="https://github.com/cybervirus997" target="_blank" rel="noreferrer">
-                                <FaGithub className="landing--social" style={{color: theme.secondary}}/>
+                                <FaGithub className="landing--social" style={{color: theme.secondary}} />
                             </a>
                         )}
                         {socialsData.twitter && (
@@ -132,14 +127,14 @@ function Landing() {
                             </h3>
                             
                         </div>
-                        {/* <p style={{ textAlign: "center", color: "transparent" }}>{headerData.desciption}</p> */}
+                        
                         
 
 
-                        <div style={{position:"relative",width:"100%",marginBottom:"10%"}} className="lcr-buttonContainer">
+                        <div style={{position:"relative",margin:"10% auto",width:"70%",marginBottom:"10%"}} className="lcr-buttonContainer">
                             <div>
                                 {headerData.resumePdf && (
-                                <a href={headerData.resumePdf} download="resume" target="_blank" rel="noreferrer">
+                                <a href="https://drive.google.com/file/d/1n2sYhpiWQCOZ6suFVlkSp2PP33LcZffw/view?usp=sharing" download="resume" target="_blank" rel="noreferrer">
                                    
                                     <Button className={classes.resumeBtn}>Download CV</Button>
                                     
@@ -150,9 +145,6 @@ function Landing() {
                                 <NavLink to="/#contacts" smooth={true} spy="true" duration={2000}>
                                 <Button className={classes.contactBtn}>Contact</Button>
                             </NavLink>
-                            </div>
-                             <div smooth={true} spy="true" duration={2000}>
-                                <Button className={classes.contactBtn} >ThemeChanger</Button>
                             </div>
                             
                         </div>

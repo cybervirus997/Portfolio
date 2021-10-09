@@ -30,7 +30,7 @@ function Skills() {
                         pauseOnClick={true} 
                         delay={0}
                         play={true} 
-                        direction="left"
+                        direction="right"
                     >
                         {skillsData.map((skill, id) => (
                             <div className="skill--box" key={id} style={skillBoxStyle}>

@@ -11,12 +11,12 @@ import Drawer from '@material-ui/core/Drawer';
 import CloseIcon from '@material-ui/icons/Close';
 
 import './Navbar.css'
-import { headerData } from '../../data/headerData'
 import { ThemeContext } from '../../contexts/ThemeContext'
 
 function Navbar() {
 
-    const { theme, setHandleDrawer }  = useContext(ThemeContext)
+    const { theme, setHandleDrawer } = useContext(ThemeContext)
+    console.log(theme)
 
     const [open, setOpen] = useState(false);
 
@@ -125,19 +125,13 @@ function Navbar() {
     const classes = useStyles();
 
 
-    const shortname = (name) => {
-        if(name.length > 12) {
-            return name.split(" ")[0]
-        } else {
-            return name
-        }
-    }
+    
 
 
     return (
         <div className="navbar">
             <div className="navbar--container">
-                <h1 style={{color: theme.secondary}}>{shortname(headerData.name)}</h1>
+                <h1 style={{color: theme.secondary}}>SoumyaRanjan</h1>
 
                 <IoMenuSharp className={classes.navMenu} onClick={handleDrawerOpen}/>
             </div>
@@ -150,7 +144,7 @@ function Navbar() {
                         handleDrawerClose()
                     }
                 }}
-                anchor="left"
+                anchor="right"
                 open={open}
                 classes={{ paper: classes.MuiDrawer }}
                 className="drawer"
@@ -194,19 +188,19 @@ function Navbar() {
                             <NavLink to="/#services" smooth={true} spy="true" duration={2000}>
                                 <div className={classes.drawerItem}>
                                     <BsFillGearFill className={classes.drawerIcon}/>
-                                    <span className={classes.drawerLinks}>Services</span>
+                                    <span className={classes.drawerLinks}>Hobbies</span>
                                 </div>
                             </NavLink>
                         </Fade>
 
-                        <Fade left>
+                        {/* <Fade left>
                             <NavLink to="/#blog" smooth={true} spy="true" duration={2000}>
                                 <div className={classes.drawerItem}>
                                     <FaFolderOpen className={classes.drawerIcon}/>
                                     <span className={classes.drawerLinks}>Blog</span>
                                 </div>
                             </NavLink>
-                        </Fade>
+                        </Fade> */}
 
                         <Fade left>
                             <NavLink to="/#contacts" smooth={true} spy="true" duration={2000}>
