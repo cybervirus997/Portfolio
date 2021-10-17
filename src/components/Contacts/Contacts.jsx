@@ -10,6 +10,7 @@ import { FiPhone, FiAtSign } from "react-icons/fi";
 import { HiOutlineLocationMarker } from "react-icons/hi"
 
 import { ThemeContext } from '../../contexts/ThemeContext';
+import emailjs from 'emailjs-com';
 
 import { socialsData } from '../../data/socialsData'
 import { contactsData } from '../../data/contactsData'
@@ -129,22 +130,39 @@ function Contacts() {
                     email: email,
                     message: message
                 }
-        
-                axios.post(contactsData.sheetAPI, responseData)
-                    .then(res => {
-                        console.log('success')
-                        setSuccess(true)
+            
+            //email sections
+                
+                emailjs.send('service_7mwrpfp','template_5jlde4m', responseData, 'user_BXHJ6DmhAdrMyslj668Q1')
+                .then((response) => {
+                    console.log('SUCCESS!', response.status, response.text);
+                    setSuccess(true)
                         setErrMsg('')
-
                         setName("");
                         setEmail("");
                         setMessage("")
                         setOpen(false)
-                    })
+                }, (err) => {
+                console.log('FAILED...', err);
+                });
+                
+                // axios.post(contactsData.sheetAPI, responseData)
+                //     .then(res => {
+                //         console.log('success')
+                //         setSuccess(true)
+                //         setErrMsg('')
+
+                //         setName("");
+                //         setEmail("");
+                //         setMessage("")
+                //         setOpen(false)
+                //     })
             } else {
                 setErrMsg('Invalid email')
                 setOpen(true)
             }
+
+            //email sections
             
         } else {
             setErrMsg('Enter all the fields')
