@@ -26,28 +26,35 @@
     font-family: var(--primaryFont);
     margin-bottom: 2rem;
 }
-
 .experience-card {
     display: flex;
     flex-direction: row;
     align-items:flex-start;
     justify-content: flex-start;
+    
     width: 90%;
     height: 140px;
     padding: 1.5rem;
     border-radius: 20px;
     margin-bottom: 1.5rem;
     transition: background-color 200ms ease-in-out;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    z-index: 88;
 }
 
 .expcard-img {
     border-radius: 50%;
-    width: 55px;
-    height: 55px;
+    width: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+     box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+     rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .expcard-img > img {

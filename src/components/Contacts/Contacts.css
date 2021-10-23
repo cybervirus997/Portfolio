@@ -101,6 +101,8 @@
     align-items: center;
     justify-content: space-evenly;
     cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 
 .submit-btn button p {
@@ -113,6 +115,7 @@
     align-items: center;
     justify-content: center;
     padding: 5px;
+    
 }
 .send-icon {
     font-size: 25px;
@@ -166,7 +169,14 @@
     gap: 1.5rem;
     margin-top: 4rem;
 }
-
+.socialmedia-icons>* {
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+        rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+        ; */
+        box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+        rgba(0, 0, 0, 0.22) 0px 15px 12px ;
+        /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
+}
 
 @media (min-width: 992px) and (max-width: 1380px) {
     .contacts--img {

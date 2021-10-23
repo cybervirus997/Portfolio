@@ -7,6 +7,7 @@ import { ThemeContext } from '../../contexts/ThemeContext';
 import { skillsData } from '../../data/skillsData'
 import { skillsImage } from '../../utils/skillsImage'
 
+
 function Skills() {
 
     const { theme } = useContext(ThemeContext);
@@ -15,6 +16,7 @@ function Skills() {
         backgroundColor: theme.secondary,
         boxShadow: `0px 0px 30px ${theme.primary30}`
     }
+
 
     return (
         <div className="skills" style={{backgroundColor: theme.secondary}}>
@@ -25,7 +27,7 @@ function Skills() {
                 <div className="skill--scroll">
                     <Marquee 
                         gradient={false} 
-                        speed={80} 
+                        speed={60} 
                         pauseOnHover={true}
                         pauseOnClick={true} 
                         delay={0}
@@ -40,6 +42,8 @@ function Skills() {
                                 </h3>
                             </div>
                         ))}
+
+
                     </Marquee>
                 </div>
             </div>

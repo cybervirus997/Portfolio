@@ -229,7 +229,7 @@ function Contacts() {
                     </div>
 
                     <div className="contacts-details">
-                        <a href={`mailto:${contactsData.email}`} className="personal-details">
+                        <a  href={`mailto:${contactsData.email}`} className="personal-details">
                             <div className={classes.detailsIcon}>
                                 <FiAtSign />
                             </div>
