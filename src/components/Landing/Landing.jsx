@@ -1,4 +1,4 @@
-import React, { useContext,createContext, useState } from 'react'
+import React, { useContext } from 'react'
 import Typewriter from "typewriter-effect";
 
 import { Button } from '@material-ui/core'
@@ -9,18 +9,13 @@ import './Landing.css'
 import { ThemeContext } from '../../contexts/ThemeContext'
 import { headerData } from '../../data/headerData'
 import { socialsData } from '../../data/socialsData'
-import { trigHandler } from "../../data/themeData"
 
-import { FaAngleRight,FaTwitter, FaLinkedin, FaGithub, FaYoutube, FaBlogger } from "react-icons/fa";
+import {FaLinkedin, FaGithub } from "react-icons/fa";
 
 
 function Landing() {
     const { theme, drawerOpen } = useContext(ThemeContext);
-    const [variable, setVariable] = useState(4);
 
-    const handlevariable = () => {
-        setVariable(variable + 1);
-    }
 
     const useStyles = makeStyles((t) => ({
         resumeBtn : {
@@ -74,7 +69,9 @@ function Landing() {
         <div className="landing col-12" >
             <div className="landing--container col-12">
 
-                <div className="landing--container-left" style={{backgroundColor: theme.primary}}>
+                
+
+                <div className="landing--container-left" style={{ backgroundColor: theme.primary}}>
                     <div className="lcl--content">
                         {socialsData.linkedIn && (
                             <a href="https://www.linkedin.com/in/soumya-ranjan-purohit-90a3a194/" target="_blank" rel="noreferrer">
@@ -86,7 +83,7 @@ function Landing() {
                                 <FaGithub className="landing--social" style={{color: theme.secondary}} />
                             </a>
                         )}
-                        {socialsData.twitter && (
+                        {/* {socialsData.twitter && (
                             <a href="#." target="_blank" rel="noreferrer">
                                 <FaTwitter className="landing--social" style={{color: theme.secondary}}/>
                             </a>
@@ -100,7 +97,7 @@ function Landing() {
                             <a href="#" target="_blank" rel="noreferrer">
                                 <FaBlogger className="landing--social" style={{color: theme.secondary}}/>
                             </a>
-                        )}
+                        )} */}
                     </div>
                 </div>
                 <img src={headerData.image} alt="" className="landing--img" style={{ opacity: `${drawerOpen ? '0' : '1'}`, borderColor: theme.secondary}}/>
@@ -108,7 +105,7 @@ function Landing() {
                     <div className="lcr--content" style={{color: theme.tertiary}}>
                         {/* <h6 style={{textAlign:"center",marginTop:"20%",color:"transparent"}} >{headerData.title}</h6> */}
                         <div className="col-12" style={{textAlign:"center",marginTop:"20%"}}>  <img src="https://raw.githubusercontent.com/tal-zvon/tal-zvon/main/assets/Hand_Wave.gif" width="20%"  alt="" />  </div>
-                        <h1 className="aimee" style={{ textAlign: "center",fontSize:"34px" }}>SOUMYA RAJAN PUROHiT</h1>
+                        <h1 className="aimee" style={{ textAlign: "center",fontSize:"33px" }}>SOUMYA RANJAN PUROHiT</h1>
                         <div style={{ textAlign: "center" }}>
                             <h3>I am a
                             <Typewriter

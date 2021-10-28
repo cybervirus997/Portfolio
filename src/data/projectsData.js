@@ -1,18 +1,9 @@
-import one from '../assets/svg/projects/one.svg'
-import two from '../assets/svg/projects/two.svg'
-import three from '../assets/svg/projects/three.svg'
-import four from '../assets/svg/projects/four.svg'
-import five from '../assets/svg/projects/five.svg'
-import six from '../assets/svg/projects/six.svg'
-import seven from '../assets/svg/projects/seven.svg'
-import eight from '../assets/svg/projects/eight.svg'
-
 
 export const projectsData = [
     {
         id: 1,
         projectName: 'OnBikes',
-        projectDesc: 'This project is the clone of ONN Bikes which is the most affordable bike rental company in India. They specialize in motorcycle rental, from short-term motorbike rental to long-term hiring or leasing, from bike tours to bike maintenance and service.',
+        projectDesc: 'ONN Bikes which is a bike rental company in India. They specialize in motorcycle rental, from short-term motorbike rental to long-term hiring or leasing, from bike tours to bike maintenance and service.',
         tags: ["Html", "css", "javascript"],
          logos: ["fab fa-html5", "fab fa-css3", "fab fa-js"],
         code: 'https://github.com/Rahul3105/Onn_bikes_clone',
@@ -26,8 +17,8 @@ export const projectsData = [
         tags: ["React", "Express.js", "Node.js", "Bootstrap"],
         logos: ["fab fa-react", "fab fa-html5","fab fa-bootstrap", "fab fa-js", "fab fa-node"],
         code: 'https://github.com/cybervirus997/Olx',
-        demo: 'https://projectolx.vercel.app/',
-        image: "https://user-images.githubusercontent.com/72969348/135753076-b32dfd7d-545d-42b6-9b0b-37b8cc8f700b.png"
+        demo: 'https://youtu.be/wxFuJ_I0-1M',
+        image: "https://user-images.githubusercontent.com/72969348/139317331-5ff084a1-b586-4988-8ce0-6f5ffb76ddd0.png"
     },
     {
         id: 3,
@@ -36,17 +27,17 @@ export const projectsData = [
         tags: ["EJS", "Node.js", "mongoDB"],
         logos: ["fab fa-vuejs", "fas fa-database", "fab fa-js", "fab fa-node"],
         code: 'https://github.com/biswajitdas-007/Pluralsight',
-        // demo: 'https://github.com/hhhrrrttt222111/developer-portfolio',
-        image: "https://github.com/biswajitdas-007/pluralsight_clone/raw/master/Screenshots/Screenshot%202021-08-22%20at%2011.46.01%20AM.png?raw=true"
+        demo: 'https://pluralsightclone-1.herokuapp.com/',
+        image: "https://user-images.githubusercontent.com/72969348/139317539-6ff80bd4-68f5-47b3-8d9d-90154f451e0d.png"
     },
     {
         id: 4,
         projectName: 'Project MightyCause',
-        projectDesc: 'Mightycause is online fundraising software for empowering nonprofits, people, and the causes they believe in. We tried to clone the Mightycause website from the scratch. A user can create his/her porfile and create any number of events they want from their dashboard.',
+        projectDesc: 'It is a online fundraising website for empowering nonprofits donations. We tried to clone the Mightycause website from the scratch. A user can create his/her porfile and create any number of events they want from their dashboard.',
         tags: ["React.js", "material.ui"],
-         logos: ["fab fa-react", "fab fa-database", "fab fa-js"],
+         logos: ["fab fa-react", "fas fa-database", "fab fa-js"],
         code: 'https://github.com/cybervirus997/Mightycause',
-        // demo: 'https://github.com/hhhrrrttt222111/developer-portfolio',
+        demo: 'https://mighty-cause-ravishukla86044.vercel.app/',
         image: "https://user-images.githubusercontent.com/77038954/129859566-716f10fe-7b02-465f-962e-981da3632e85.png"
     },
 ]
