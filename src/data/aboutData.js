@@ -1,6 +1,6 @@
 export const aboutData = {
     title: "Who I am",
-    description1: "I fell in love with coding while writing my first program in Python.I was first introduced to coding in school where I learnt C++. But at that point, I was more fascinated by electronic bots which lead me to pursue my Bachelor's and Master's in Electronics.But my drive to learn new things made me stumble upon Python tutorial videos during the 2020 lockdown, and since then there has been no going back. I found my passion in web development. I have learnt various tech stack to build many projects. I'm still enthusiastically grabbing on to any programming languages, frameworks, and principles I can add to my coding skillset. ",
+    description1: `I'm a Full Stack Web Developer with hands-on experience in designing, developing, and maintaining projects. Adept at learning, unlearning, and relearning. Demonstrate the capability of managing clean, elegant, and efficient code. Highly skilled in collaboration, decision-making, and Data Structures & Algorithms.I'm still enthusiastically grabbing on to multiple programming languages, frameworks, and principles that I can add to my skillset. `,
     description2: "",
     image: 2
 }

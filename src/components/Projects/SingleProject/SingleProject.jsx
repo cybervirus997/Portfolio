@@ -57,15 +57,17 @@ function SingleProject({ id, name, desc, tags, code, demo, image, theme,logos })
                         <div style={{ width:"80%",display:"flex",flexFlow:"row",justifyContent:"space-evenly" }}>
 
                             {logos.map((logo, id) => (
-                            <span key={id}>
-                                    <i class={logo}></i> 
-                            </span>
+                            
+                                <div  style={{width:"100%",alignItems: "center",textAlign: "center"}}key={id}>
+                                    <i class={logo}></i>
+                                    <p style={{ fontSize: "16px" }}>{logo === "fab fa-html5" ? "html" : logo === "fab fa-react" ? "react" : logo === "fas fa-database" ? "MongoDB" : logo === "fab fa-js" ? "js" : logo === "fab fa-vuejs" ? "EJS" : logo === "fab fa-vuejs" ? "EJS" : logo === "fab fa-css3" ? "CSS" : logo === "fab fa-node" ? "Node.js" : logo === "fab fa-bootstrap" ? "Bootstrap" : ""}</p>
+                                </div>
                          ))}
 
                         </div>
                         
                 </div>
-                    <div className="project--showcaseBtn" style={{paddingBottom:"10px"}}>
+                    <div className="project--showcaseBtn">
                         <a href={demo} target="_blank" rel="noreferrer" className={classes.iconBtn}>
                             <FaPlay className={classes.icon}/>
                         </a>
@@ -82,3 +84,19 @@ function SingleProject({ id, name, desc, tags, code, demo, image, theme,logos })
 }
 
 export default SingleProject
+
+
+// function logoTraqcker(res) {
+//     if (res = "fab fa-html5") {
+//         console.log("html")
+//     }
+//     else if (res = "fab fa-css3") {
+//         console.log("CSS")
+//     } else if (res = "fab fa-js")
+//     {
+//         console.log("JavaScript");
+//     }
+// }
+
+
+// logo==="fab fa-html5" ? "html" : logo==="fab fa-css3" ? "CSS": logo==="fab fa-js" ? "JavaScript" : "react"
