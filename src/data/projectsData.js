@@ -17,7 +17,7 @@ export const projectsData = [
         tags: ["React", "Express.js", "Node.js", "Bootstrap"],
         logos: ["fab fa-react", "fab fa-html5","fab fa-bootstrap", "fab fa-js", "fab fa-node"],
         code: 'https://github.com/cybervirus997/Olx',
-        demo: 'https://youtu.be/wxFuJ_I0-1M',
+        demo: 'https://cloneofolx-cybervirus997.vercel.app/',
         image: "https://user-images.githubusercontent.com/72969348/139317331-5ff084a1-b586-4988-8ce0-6f5ffb76ddd0.png"
     },
     {
