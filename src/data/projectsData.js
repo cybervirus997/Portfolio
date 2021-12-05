@@ -18,7 +18,7 @@ export const projectsData = [
         tags: ["React", "Express.js", "Node.js", "Bootstrap"],
         logos: ["fab fa-react","fab fa-bootstrap", "fab fa-js", "fab fa-node"],
         code: 'https://github.com/cybervirus997/Olx',
-        demo: 'https://cloneofolx-cybervirus997.vercel.app/',
+        demo: 'https://olx-clone-team4.vercel.app/',
         image: "https://user-images.githubusercontent.com/72969348/139317331-5ff084a1-b586-4988-8ce0-6f5ffb76ddd0.png"
     },
         {
@@ -33,6 +33,16 @@ export const projectsData = [
     },
     {
         id: 4,
+        projectName: 'Twitter',
+        projectDesc: 'This clone allows users to tweet,retweet, like, and comment on tweets made by other user ',
+        tags: ["React", "Node.js", "MongoDb"],
+        logos: ["fab fa-react","fab fa-etsy","fab fa-node","fas fa-database"],
+        code: 'https://github.com/Malek1117/twitter_clone_master',
+        demo: 'https://twitter-client-mu.vercel.app/',
+        image: "https://user-images.githubusercontent.com/72969348/144738693-71595176-877e-44e1-aff4-413bbec578b9.png"
+    },
+    {
+        id: 5,
         projectName: 'Project Pluralsight',
         projectDesc: 'Pluralsight, Inc. is an American privately held online education company that offers a variety of video training courses for software developers, IT administrators, and creative professionals through its website. ',
         tags: ["EJS", "Node.js", "mongoDB"],
@@ -42,7 +52,7 @@ export const projectsData = [
         image: "https://user-images.githubusercontent.com/72969348/139317539-6ff80bd4-68f5-47b3-8d9d-90154f451e0d.png"
     },
     {
-        id: 5,
+        id: 6,
         projectName: 'Project MightyCause',
         projectDesc: 'It is a online fundraising website for empowering nonprofits donations. We tried to clone the Mightycause website from the scratch. A user can create his/her porfile and create any number of events they want from their dashboard.',
         tags: ["React.js", "material.ui"],

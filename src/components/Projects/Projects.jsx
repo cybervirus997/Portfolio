@@ -55,7 +55,7 @@ function Projects() {
         }
     }
     const handleNext= () => {
-        if (next !== 2)                                        // if you want to increase size increse this number.
+        if (next !== 3)                                        // if you want to increase size increse this number.
         {
             setNext(next+1)
         }
