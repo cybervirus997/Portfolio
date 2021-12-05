@@ -55,11 +55,13 @@ function Projects() {
         }
     }
     const handleNext= () => {
-        if (next !== 1)
+        if (next !== 2)                                        // if you want to increase size increse this number.
         {
             setNext(next+1)
         }
     }
+
+    console.log(next);
 
     return (
         <>
@@ -103,17 +105,6 @@ function Projects() {
 
                             </button>
                         </div> 
-
-                        {/* {projectsData.length > 3 && (
-                            <div className="projects--viewAll">
-                                <Link to="/projects">
-                                    <button className={classes.viewAllBtn}>
-                                        View All
-                                        <HiArrowRight className={classes.viewArr} />
-                                    </button>
-                                </Link>
-                            </div>
-                        )} */}
                     </div>
                 </div>
             )}

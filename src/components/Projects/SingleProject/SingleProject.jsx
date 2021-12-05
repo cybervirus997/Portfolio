@@ -60,7 +60,7 @@ function SingleProject({ id, name, desc, tags, code, demo, image, theme,logos })
                             
                                 <div  style={{width:"100%",alignItems: "center",textAlign: "center"}}key={id}>
                                     <i class={logo}></i>
-                                    <p style={{ fontSize: "16px" }}>{logo === "fab fa-html5" ? "html" : logo === "fab fa-react" ? "react" : logo === "fas fa-database" ? "MongoDB" : logo === "fab fa-js" ? "js" : logo === "fab fa-vuejs" ? "EJS" : logo === "fab fa-vuejs" ? "EJS" : logo === "fab fa-css3" ? "CSS" : logo === "fab fa-node" ? "Node.js" : logo === "fab fa-bootstrap" ? "Bootstrap" : ""}</p>
+                                    <p style={{ fontSize: "16px" }}>{logo === "fab fa-html5" ? "html" : logo === "fab fa-react" ? "react" : logo === "fas fa-database" ? "Mongo" : logo === "fab fa-js" ? "js" : logo === "fab fa-vuejs" ? "EJS" : logo === "fab fa-vuejs" ? "EJS" : logo === "fab fa-css3" ? "CSS" : logo === "fab fa-node" ? "Node.js" : logo === "fab fa-bootstrap" ? "Bootstrap" :  logo === "fab fa-etsy" ? "Express" : ""}</p>
                                 </div>
                          ))}
 
