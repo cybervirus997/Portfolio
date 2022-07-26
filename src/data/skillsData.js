@@ -6,6 +6,7 @@
      "Bootstrap",
      "MongoDB",
      "nodejs",
-    "ExpressJS"
+    "ExpressJS",
+    "React Native"
 ]
 
