@@ -160,7 +160,7 @@ function Landing() {
               <div style={{ marginBottom: "30px" }}>
                 {headerData.resumePdf && (
                   <a
-                    href="https://drive.google.com/file/d/1R7C7zrj6I0-1Q1tKXT5Ck4TD2xDgXup9/view?usp=sharing"
+                    href="https://drive.google.com/file/d/1_rWRsYzrj1tr3BlDWrdu99XvnJduHY5p/view?usp=sharing"
                     download="resume"
                     target="_blank"
                     rel="noreferrer"
