@@ -59,7 +59,7 @@ import tensorflow from '../assets/svg/skills/tensorflow.svg'
 import webix from '../assets/svg/skills/webix.svg'
 import wordpress from '../assets/svg/skills/wordpress.svg'
 import nodejs from '../assets/svg/skills/nodejs.svg'
-import ExpressJS from '../assets/svg/skills/expressjsss.svg'
+import ExpressJS from '../assets/svg/skills/ExpressJS.png'
 
 import azure from '../assets/svg/skills/azure.svg'
 import blender from '../assets/svg/skills/blender.svg'
@@ -143,8 +143,8 @@ export const skillsImage = (skill) => {
             return cplusplus;
         case 'c#':
             return csharp;
-        case ExpressJS:
-            return 'ExpressJS';
+        case 'expressjs':
+            return ExpressJS;
         case 'dart':
             return dart;
         case 'go':
