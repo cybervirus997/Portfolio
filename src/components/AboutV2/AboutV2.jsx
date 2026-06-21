@@ -12,9 +12,9 @@ function AboutV2() {
       <div className="pf-about__grid">
         <div>
           <h2 data-reveal className="pf-about__heading">
-            Full-stack developer who cares about{' '}
-            <span className="pf-serif-italic">clean, elegant</span>
-            {' '}and efficient code.
+            Senior engineer building at the intersection of{' '}
+            <span className="pf-serif-italic">performance, AI,</span>
+            {' '}and elegant code.
           </h2>
           <p data-reveal className="pf-about__p" style={{ transitionDelay: '0.1s' }}>
             {aboutData.description1}
@@ -27,16 +27,20 @@ function AboutV2() {
         </div>
         <div data-reveal className="pf-about__stats" style={{ transitionDelay: '0.2s' }}>
           <div className="pf-stat-card">
-            <div className="pf-stat-card__num">2+</div>
+            <div className="pf-stat-card__num">5+</div>
             <div className="pf-stat-card__label">years building products</div>
           </div>
           <div className="pf-stat-card">
-            <div className="pf-stat-card__num">10+</div>
-            <div className="pf-stat-card__label">projects shipped</div>
+            <div className="pf-stat-card__num">14+</div>
+            <div className="pf-stat-card__label">projects shipped &amp; many unpublished</div>
+          </div>
+          <div className="pf-stat-card">
+            <div className="pf-stat-card__num">1.6M+</div>
+            <div className="pf-stat-card__label">users on production systems</div>
           </div>
           <div className="pf-stat-card">
             <div className="pf-stat-card__num">M.Sc</div>
-            <div className="pf-stat-card__label">Electronics, GGU</div>
+            <div className="pf-stat-card__label">Masters &amp; B.Sc. Electronics</div>
           </div>
         </div>
       </div>

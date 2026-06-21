@@ -1,23 +1,63 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
 import './ProjectsV2.css';
 import { projectsData } from '../../data/projectsData';
 import { useScrollReveal } from '../../hooks/useScrollReveal';
 
 function ProjectsV2() {
   const sectionRef = useScrollReveal();
+  const trackRef = useRef(null);
+  const [activeIdx, setActiveIdx] = useState(0);
+  const CARD_W = 360;
+  const GAP = 22;
+
+  function scrollTo(idx) {
+    const clamped = Math.max(0, Math.min(idx, projectsData.length - 1));
+    setActiveIdx(clamped);
+    if (trackRef.current) {
+      trackRef.current.scrollTo({
+        left: clamped * (CARD_W + GAP),
+        behavior: 'smooth',
+      });
+    }
+  }
+
+  function onScroll() {
+    if (!trackRef.current) return;
+    const idx = Math.round(trackRef.current.scrollLeft / (CARD_W + GAP));
+    setActiveIdx(Math.max(0, Math.min(idx, projectsData.length - 1)));
+  }
 
   return (
     <section id="work" className="pf-sec pf-projects" ref={sectionRef}>
       <div data-reveal className="pf-eyebrow">03 — Selected work</div>
-      <h2 data-reveal className="pf-sec-heading" style={{ transitionDelay: '0.05s' }}>Things I've built</h2>
+      <div className="pf-projects__header">
+        <h2 data-reveal className="pf-sec-heading pf-sec-heading--no-mb" style={{ transitionDelay: '0.05s', marginBottom: 0 }}>Things I've built</h2>
+        <div className="pf-projects__nav">
+          <button
+            className="pf-projects__nav-btn"
+            onClick={() => scrollTo(activeIdx - 1)}
+            disabled={activeIdx === 0}
+            aria-label="Previous project"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+          </button>
+          <span className="pf-projects__counter">{activeIdx + 1} / {projectsData.length}</span>
+          <button
+            className="pf-projects__nav-btn"
+            onClick={() => scrollTo(activeIdx + 1)}
+            disabled={activeIdx === projectsData.length - 1}
+            aria-label="Next project"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+          </button>
+        </div>
+      </div>
 
-      <div className="pf-projects__grid">
-        {projectsData.slice(0, 6).map((p, i) => (
+      <div className="pf-projects__track" ref={trackRef} onScroll={onScroll}>
+        {projectsData.map((p, i) => (
           <article
             key={p.id}
-            data-reveal
-            className="pf-project-card"
-            style={{ transitionDelay: `${i * 0.08}s` }}
+            className={`pf-project-card${i === activeIdx ? ' pf-project-card--active' : ''}`}
           >
             <div className="pf-project-card__thumb">
               {p.image ? (
@@ -49,6 +89,17 @@ function ProjectsV2() {
               </div>
             </div>
           </article>
+        ))}
+      </div>
+
+      <div className="pf-projects__dots">
+        {projectsData.map((_, i) => (
+          <button
+            key={i}
+            className={`pf-projects__dot${i === activeIdx ? ' pf-projects__dot--active' : ''}`}
+            onClick={() => scrollTo(i)}
+            aria-label={`Go to project ${i + 1}`}
+          />
         ))}
       </div>
     </section>
