@@ -39,4 +39,4 @@ function EducationCard({ id, institution, course, startYear, endYear }) {
     )
 }
 
-export default EducationCard
+export default React.memo(EducationCard)

@@ -21,4 +21,4 @@ function SingleBlog({ theme, title, desc, date, image, url, id }) {
     )
 }
 
-export default SingleBlog
+export default React.memo(SingleBlog)
