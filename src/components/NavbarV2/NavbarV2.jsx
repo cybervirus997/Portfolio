@@ -17,8 +17,13 @@ function NavbarV2() {
   return (
     <nav className={`pf-nav${scrolled ? ' pf-nav--scrolled' : ''}`}>
       <a href="#top" className="pf-nav__logo">
-        <span className="pf-nav__mark">&lt;SRP</span>
-        <span className="pf-accent-dot"> /&gt;</span>
+        <span className="pf-nav__mark">
+          <svg width="18" height="18" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <text x="50%" y="50%" dominantBaseline="central" textAnchor="middle"
+              fontFamily="'Space Grotesk', sans-serif" fontWeight="700" fontSize="20" fill="#fff">S</text>
+          </svg>
+        </span>
+        <span className="pf-nav__wordmark">Soumya<span className="pf-accent-dot">.</span></span>
       </a>
 
       <div className="pf-nav__links">
