@@ -1,0 +1,55 @@
+.pf-about {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 120px 40px;
+  scroll-margin-top: 90px;
+}
+.pf-about__grid {
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+.pf-about__heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(28px, 3.4vw, 42px);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  font-weight: 600;
+  margin: 0 0 28px;
+  color: #ededed;
+}
+.pf-about__p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgba(237,237,237,0.6);
+  margin: 0 0 18px;
+}
+.pf-about__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.pf-stat-card {
+  padding: 22px;
+  border-radius: 16px;
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.pf-stat-card__num {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--accent);
+}
+.pf-stat-card__label {
+  font-size: 14px;
+  color: rgba(237,237,237,0.55);
+  margin-top: 4px;
+}
+
+@media (max-width: 760px) {
+  .pf-about { padding: 56px 22px; }
+  .pf-about__grid { grid-template-columns: 1fr; gap: 48px; }
+}
