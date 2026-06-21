@@ -25,22 +25,28 @@ function AboutV2() {
             </p>
           )}
         </div>
-        <div data-reveal className="pf-about__stats" style={{ transitionDelay: '0.2s' }}>
-          <div className="pf-stat-card">
-            <div className="pf-stat-card__num">5+</div>
-            <div className="pf-stat-card__label">years building products</div>
+        <div data-reveal className="pf-about__right-col" style={{ transitionDelay: '0.2s' }}>
+          <div className="pf-about__photo-wrap">
+            <img
+              src="/profile.jpg"
+              alt="Soumya Ranjan Purohit"
+              className="pf-about__photo"
+            />
+            <div className="pf-about__photo-glow" />
           </div>
-          <div className="pf-stat-card">
-            <div className="pf-stat-card__num">14+</div>
-            <div className="pf-stat-card__label">projects shipped &amp; many unpublished</div>
-          </div>
-          <div className="pf-stat-card">
-            <div className="pf-stat-card__num">1.6M+</div>
-            <div className="pf-stat-card__label">users on production systems</div>
-          </div>
-          <div className="pf-stat-card">
-            <div className="pf-stat-card__num">M.Sc</div>
-            <div className="pf-stat-card__label">Masters &amp; B.Sc. Electronics</div>
+          <div className="pf-about__stats">
+            <div className="pf-stat-card">
+              <div className="pf-stat-card__num">5+</div>
+              <div className="pf-stat-card__label">years building products</div>
+            </div>
+            <div className="pf-stat-card">
+              <div className="pf-stat-card__num">14+</div>
+              <div className="pf-stat-card__label">projects shipped &amp; many unpublished</div>
+            </div>
+            <div className="pf-stat-card">
+              <div className="pf-stat-card__num">1.6M+</div>
+              <div className="pf-stat-card__label">users on production systems</div>
+            </div>
           </div>
         </div>
       </div>
