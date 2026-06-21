@@ -1,0 +1,25 @@
+.pf-footer {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 30px 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+.pf-footer__logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #ededed;
+}
+.pf-footer__credit {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: rgba(237,237,237,0.45);
+}
+@media (max-width: 760px) {
+  .pf-footer { padding: 28px 22px; }
+}

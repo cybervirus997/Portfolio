@@ -1,0 +1,100 @@
+.pf-contact {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 40px 100px;
+  scroll-margin-top: 90px;
+}
+.pf-contact__heading {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: clamp(34px, 5vw, 60px);
+  letter-spacing: -0.03em;
+  font-weight: 700;
+  margin: 0 0 16px;
+  line-height: 1;
+  color: #ededed;
+}
+.pf-contact__sub {
+  font-size: 17px;
+  color: rgba(237,237,237,0.6);
+  margin: 0 0 44px;
+  max-width: 480px;
+}
+.pf-contact__grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+/* ── Form ── */
+.pf-contact__form { display: flex; flex-direction: column; gap: 16px; }
+.pf-input {
+  width: 100%;
+  padding: 15px 18px;
+  border-radius: 12px;
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 15px;
+  outline: none;
+  transition: border-color 0.2s;
+  box-sizing: border-box;
+}
+.pf-input:focus { border-color: var(--accent); }
+.pf-input--textarea { resize: vertical; }
+.pf-input::placeholder { color: rgba(237,237,237,0.4); }
+.pf-contact__submit { align-self: flex-start; }
+
+/* ── Contact info ── */
+.pf-contact__info { display: flex; flex-direction: column; gap: 20px; }
+.pf-contact__row {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  text-decoration: none;
+  color: #ededed;
+}
+.pf-contact__icon-wrap {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 11px;
+  background: color-mix(in srgb, var(--accent) 18%, transparent);
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.pf-contact__row-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  color: rgba(237,237,237,0.45);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.pf-contact__row-val { font-size: 15px; font-weight: 500; }
+
+.pf-contact__socials {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+.pf-social-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  padding: 8px 14px;
+  border-radius: 9px;
+  border: 1px solid rgba(255,255,255,0.14);
+  color: rgba(237,237,237,0.7);
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.pf-social-link:hover { border-color: var(--accent); color: #fff; }
+
+@media (max-width: 760px) {
+  .pf-contact { padding: 56px 22px; }
+  .pf-contact__grid { grid-template-columns: 1fr; gap: 48px; }
+}

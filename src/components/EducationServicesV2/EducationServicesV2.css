@@ -1,0 +1,79 @@
+.pf-edu-svc {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 40px 40px 120px;
+}
+.pf-edu-svc__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* ── Timeline ── */
+.pf-timeline { display: flex; flex-direction: column; position: relative; }
+.pf-timeline__item {
+  display: flex;
+  gap: 18px;
+  padding-bottom: 28px;
+  border-left: 1px solid rgba(255,255,255,0.12);
+  padding-left: 24px;
+  margin-left: 6px;
+  position: relative;
+}
+.pf-timeline__item--last { border-left-color: transparent; }
+.pf-timeline__dot {
+  position: absolute;
+  left: -6px;
+  top: 2px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+.pf-timeline__years {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  color: var(--accent);
+}
+.pf-timeline__degree {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 4px 0;
+  color: #ededed;
+}
+.pf-timeline__inst {
+  font-size: 14px;
+  color: rgba(237,237,237,0.55);
+}
+
+/* ── Hobbies ── */
+.pf-edu-svc__sub {
+  font-size: 15px;
+  color: rgba(237,237,237,0.55);
+  margin: 0 0 28px;
+}
+.pf-hobbies {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+.pf-hobby-card {
+  padding: 22px;
+  border-radius: 16px;
+  background: var(--panel);
+  border: 1px solid rgba(255,255,255,0.07);
+}
+.pf-hobby-card__icon { font-size: 22px; margin-bottom: 10px; }
+.pf-hobby-card__title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 15px;
+  color: #ededed;
+}
+
+@media (max-width: 760px) {
+  .pf-edu-svc { padding: 56px 22px; }
+  .pf-edu-svc__grid { grid-template-columns: 1fr; gap: 48px; }
+}

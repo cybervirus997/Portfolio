@@ -1,0 +1,27 @@
+.pf-marquee {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  padding: 22px 0;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--accent) 5%, var(--bg));
+}
+.pf-marquee__track {
+  display: flex;
+  width: max-content;
+  animation: pf-marq 32s linear infinite;
+}
+.pf-marquee__set {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+.pf-marquee__item {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  padding: 0 28px;
+  color: rgba(237,237,237,0.82);
+  white-space: nowrap;
+}
+.pf-marquee__sep { color: var(--accent); }
