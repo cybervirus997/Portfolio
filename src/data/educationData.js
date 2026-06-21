@@ -1,15 +1,15 @@
 export const educationData = [
     {
         id: 1,
-        institution: 'Guru Ghasidas University( a central university)',
-        course: `Master's in Electronics`,
+        institution: 'Central University of Chhattisgarh',
+        course: `Masters in Electronics`,
         startYear: '2019',
         endYear: '2021'
     },
     {
         id: 2,
-        institution: 'Guru Ghasidas University( a central university)',
-        course: `Bachlore's in Electronics`,
+        institution: 'Central University of Chhattisgarh',
+        course: `Bachelor of Electronics`,
         startYear: '2015',
         endYear: '2019'
     },

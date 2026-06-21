@@ -4,22 +4,79 @@
   padding: 40px 40px 120px;
   scroll-margin-top: 90px;
 }
-.pf-projects__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 22px;
+
+.pf-projects__header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
 }
 
+.pf-projects__nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 4px;
+}
+
+.pf-projects__nav-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: var(--panel);
+  color: #ededed;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+.pf-projects__nav-btn:hover:not(:disabled) {
+  border-color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 12%, var(--panel));
+}
+.pf-projects__nav-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+
+.pf-projects__counter {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
+  color: rgba(237,237,237,0.5);
+  min-width: 48px;
+  text-align: center;
+}
+
+/* Carousel track */
+.pf-projects__track {
+  display: flex;
+  gap: 22px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-bottom: 4px;
+}
+.pf-projects__track::-webkit-scrollbar { display: none; }
+
 .pf-project-card {
+  flex: 0 0 360px;
+  scroll-snap-align: start;
   display: flex;
   flex-direction: column;
   border-radius: 20px;
   overflow: hidden;
   background: var(--panel);
   border: 1px solid rgba(255,255,255,0.08);
+  transition: border-color 0.3s, transform 0.3s;
 }
+.pf-project-card--active {
+  border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+  transform: translateY(-4px);
+}
+
 .pf-project-card__thumb {
-  height: 150px;
+  height: 190px;
   background: repeating-linear-gradient(
     135deg,
     color-mix(in srgb, var(--accent) 26%, var(--bg)) 0 14px,
@@ -112,7 +169,30 @@
 }
 .pf-project-card__code:hover { border-color: var(--accent); }
 
+/* Dots */
+.pf-projects__dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 28px;
+}
+.pf-projects__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(237,237,237,0.2);
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  padding: 0;
+}
+.pf-projects__dot--active {
+  background: var(--accent);
+  transform: scale(1.35);
+}
+
 @media (max-width: 760px) {
   .pf-projects { padding: 56px 22px; }
-  .pf-projects__grid { grid-template-columns: 1fr; }
+  .pf-project-card { flex: 0 0 85vw; }
+  .pf-projects__header { flex-direction: column; align-items: flex-start; }
 }

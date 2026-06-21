@@ -1,14 +1,24 @@
 .pf-marquee {
   border-top: 1px solid rgba(255,255,255,0.08);
   border-bottom: 1px solid rgba(255,255,255,0.08);
-  padding: 22px 0;
+  padding: 32px 0;
   overflow: hidden;
-  background: color-mix(in srgb, var(--accent) 5%, var(--bg));
+  background: color-mix(in srgb, var(--accent) 6%, var(--bg));
+  text-align: center;
+}
+.pf-marquee__label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 18px;
+  display: block;
 }
 .pf-marquee__track {
   display: flex;
   width: max-content;
-  animation: pf-marq 32s linear infinite;
+  animation: pf-marq 48s linear infinite;
 }
 .pf-marquee__set {
   display: flex;
@@ -17,11 +27,13 @@
 }
 .pf-marquee__item {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 600;
   letter-spacing: -0.02em;
-  padding: 0 28px;
-  color: rgba(237,237,237,0.82);
+  padding: 0 24px;
+  color: rgba(237,237,237,0.85);
   white-space: nowrap;
+  transition: color 0.2s;
 }
-.pf-marquee__sep { color: var(--accent); }
+.pf-marquee__item:hover { color: var(--accent); }
+.pf-marquee__sep { color: var(--accent); font-size: 18px; }

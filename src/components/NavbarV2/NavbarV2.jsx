@@ -17,8 +17,8 @@ function NavbarV2() {
   return (
     <nav className={`pf-nav${scrolled ? ' pf-nav--scrolled' : ''}`}>
       <a href="#top" className="pf-nav__logo">
-        <span className="pf-nav__mark">S</span>
-        <span className="pf-nav__wordmark">soumya<span className="pf-accent-dot">.</span>dev</span>
+        <span className="pf-nav__mark">&lt;SRP</span>
+        <span className="pf-accent-dot"> /&gt;</span>
       </a>
 
       <div className="pf-nav__links">

@@ -20,12 +20,36 @@ function ExperienceV2() {
             style={{ transitionDelay: `${i * 0.08}s` }}
           >
             <div className="pf-exp__card-header">
-              <h3 className="pf-exp__title">
-                {exp.jobtitle} · <span className="pf-accent">{exp.company}</span>
-              </h3>
+              <div>
+                <h3 className="pf-exp__title">
+                  {exp.jobtitle} · <span className="pf-accent">{exp.company}</span>
+                </h3>
+                {exp.companyNote && (
+                  <span className="pf-exp__company-note">{exp.companyNote}</span>
+                )}
+                {exp.clients && (
+                  <div className="pf-exp__clients">Clients: {exp.clients}</div>
+                )}
+              </div>
               <span className="pf-exp__dates">{exp.startYear} — {exp.endYear}</span>
             </div>
-            <div className="pf-exp__meta">{exp.location} · {exp.duration}</div>
+
+            {exp.isGrouped && exp.roles && (
+              <div className="pf-exp__role-progression">
+                {exp.roles.map((r, ri) => (
+                  <span key={ri} className="pf-exp__role-chip">
+                    <span className="pf-exp__role-dot" />
+                    {r.title}
+                    <span className="pf-exp__role-period">{r.period}</span>
+                  </span>
+                ))}
+              </div>
+            )}
+
+            <div className="pf-exp__meta">{exp.location}</div>
+            {exp.description && (
+              <div className="pf-exp__desc">{exp.description}</div>
+            )}
 
             {exp.highlights && exp.highlights.length > 0 && (
               <ul className="pf-exp__bullets">

@@ -1,6 +1,13 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './HeroV2.css';
-const ROLES = ['Backend Developer', 'Full-Stack Engineer', 'API Architect', 'Problem Solver'];
+const ROLES = [
+  'Senior Software Engineer',
+  'React Native Engineer',
+  'AI Integration Engineer',
+  'Full-Stack Developer',
+  'LLM & GenAI Builder',
+  'Problem Solver',
+];
 const CV_URL = 'https://drive.google.com/file/d/1_rWRsYzrj1tr3BlDWrdu99XvnJduHY5p/view?usp=sharing';
 
 function HeroV2() {
@@ -14,8 +21,9 @@ function HeroV2() {
       const word = ROLES[s.ri];
       if (!s.deleting) {
         s.ci++;
+        setTyped(word.slice(0, s.ci));
         if (s.ci === word.length) { s.deleting = true; timer = setTimeout(tick, 1500); }
-        else { setTyped(word.slice(0, s.ci)); timer = setTimeout(tick, 75); }
+        else { timer = setTimeout(tick, 75); }
       } else {
         s.ci--;
         if (s.ci === 0) {
@@ -80,7 +88,7 @@ function HeroV2() {
           </div>
           <div className="pf-hero__badge-location" style={{ animation: 'pf-float 5s ease-in-out infinite' }}>
             <span className="pf-hero__badge-loc-label">based in</span>
-            <span className="pf-hero__badge-loc-city">Bargarh, Odisha 📍</span>
+            <span className="pf-hero__badge-loc-city">Bengaluru, Karnataka 📍</span>
           </div>
           <div className="pf-hero__badge-code" style={{ animation: 'pf-float 6s ease-in-out infinite 0.6s' }}>
             {'</>'}
