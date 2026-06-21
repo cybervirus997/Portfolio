@@ -111,7 +111,6 @@ function Landing() {
           style={{ backgroundColor: theme.secondary }}
         >
           <div className="lcr--content" style={{ color: theme.tertiary }}>
-            {/* <h6 style={{textAlign:"center",marginTop:"20%",color:"transparent"}} >{headerData.title}</h6> */}
             <div
               className="col-12"
               style={{ textAlign: "center", marginTop: "20%" }}

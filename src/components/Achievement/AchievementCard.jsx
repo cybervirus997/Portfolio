@@ -47,4 +47,4 @@ function AchievementCard({id, title, details, date, field, image}) {
     )
 }
 
-export default AchievementCard
+export default React.memo(AchievementCard)

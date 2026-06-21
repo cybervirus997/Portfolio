@@ -83,7 +83,7 @@ function SingleProject({ id, name, desc, tags, code, demo, image, theme,logos })
     )
 }
 
-export default SingleProject
+export default React.memo(SingleProject)
 
 
 // function logoTraqcker(res) {

@@ -1,10 +1,8 @@
-import React,{ useContext,useState} from 'react';
-// import { Link } from 'react-router-dom'
+import React,{ useContext,useState,useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 
 import { ThemeContext } from '../../contexts/ThemeContext';
 import { projectsData } from '../../data/projectsData'
-// import { HiArrowRight } from "react-icons/hi";
 
 import './Projects.css'
 import SingleProject from './SingleProject/SingleProject';
@@ -44,9 +42,14 @@ function Projects() {
         },
     }));
 
-    // const classes = useStyles();
 
-    window.addEventListener('resize', () => { window.innerWidth < 993 ? setDirection(true) :  setDirection(false)})
+    useEffect(() => {
+        const handleResize = () => {
+            setDirection(window.innerWidth < 993);
+        };
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const handlePrev = () => {
         if (next !== 0)
