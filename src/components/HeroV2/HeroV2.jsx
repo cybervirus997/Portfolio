@@ -81,10 +81,7 @@ function HeroV2() {
         <div className="pf-hero__right">
           <div className="pf-hero__portrait-frame" aria-hidden="true" />
           <div className="pf-hero__portrait">
-            <div className="pf-hero__portrait-placeholder">
-              <span className="pf-hero__portrait-hint">[ your portrait ]</span>
-              <span className="pf-hero__portrait-sub">330 × 410 · drop a clean headshot</span>
-            </div>
+            <img src="/profile.jpg" alt="Soumya Ranjan Purohit" style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }} />
           </div>
           <div className="pf-hero__badge-location" style={{ animation: 'pf-float 5s ease-in-out infinite' }}>
             <span className="pf-hero__badge-loc-label">based in</span>

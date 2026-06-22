@@ -38,10 +38,6 @@ function AboutV2() {
             <div className="pf-stat-card__num">1.6M+</div>
             <div className="pf-stat-card__label">users on production systems</div>
           </div>
-          <div className="pf-stat-card">
-            <div className="pf-stat-card__num">M.Sc</div>
-            <div className="pf-stat-card__label">Masters &amp; B.Sc. Electronics</div>
-          </div>
         </div>
       </div>
     </section>
