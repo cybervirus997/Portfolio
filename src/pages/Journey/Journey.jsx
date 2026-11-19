@@ -8,11 +8,13 @@ import { skillsData } from "../../data/skillsData";
 import { contactsData } from "../../data/contactsData";
 import { socialsData } from "../../data/socialsData";
 import "./Journey.css";
+import JourneyAtlas from "./JourneyAtlas";
 import InteractiveSphere from "./InteractiveSphere";
 import { careerChapters } from "../../data/careerChapters";
 
 const chapters = [
   ["top", "Launch"],
+  ["atlas", "Explore"],
   ["about", "The human"],
   ["experience", "The journey"],
   ["work", "Selected work"],
@@ -267,6 +269,7 @@ export default function Journey() {
   }
   return (
     <div ref={root} className={`journey ${paused ? "j-paused" : ""}`}>
+      <div className="j-reading-progress" aria-hidden="true" />
       <a href="#main" className="j-skip">
         Skip to content
       </a>
@@ -374,6 +377,7 @@ export default function Journey() {
             WebSockets <b>✳</b> React.js <b>✳</b> Node.js
           </p>
         </div>
+        <JourneyAtlas />
         <section id="about" className="j-section j-about">
           <div className="j-label" data-enter>
             The human behind the code
@@ -544,7 +548,11 @@ export default function Journey() {
           </p>
           <div className="j-project-grid">
             {shownProjects.map((p, i) => (
-              <article className="j-project" key={p.id}>
+              <article
+                className="j-project"
+                key={p.id}
+                style={{ "--project-side": i % 2 ? 1 : -1 }}
+              >
                 <External
                   href={p.demo}
                   className={`j-project-image project-tone-${p.id}`}

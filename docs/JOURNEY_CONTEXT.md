@@ -22,11 +22,13 @@ External project deployments may have aged; don't silently replace their URLs.
 Do not merge/publish production when working on this review branch.
 
 ## Architecture
-React 17 / CRA 4 retained; no new runtime dependencies. CSS `preserve-3d` orbital
-sculpture uses 16 rings. No video, WebGL engine or scroll hijacking. Pointer tilt uses event-driven rAF.
-IntersectionObserver handles entry reveals and active chapter (no per-frame React state).
-Native CSS view timeline adds portrait drift where supported. Pause control + OS
-reduced-motion + hidden-tab/offscreen pausing. All content works without those effects.
+React 17 / CRA 4 retained. Three.js 0.132.2 is a new lazy-loaded MIT dependency
+(compatibility release for Webpack 4). `OrbitalVisual.jsx` progressively loads
+`orbitalEngine.js`; 30fps target, capped DPR/point counts, offscreen/tab pause and GPU
+cleanup. CSS sphere fallback for reduced motion, Save-Data and unavailable/lost WebGL.
+`JourneyAtlas.jsx` adds a chapter constellation map. Native CSS view timelines enhance
+gallery depth/portrait drift where supported; no scroll hijacking. Existing observer
+reveals/active chapters remain. Read `docs/ANIMATION_RESEARCH.md` for sources/tradeoffs.
 Native details expose long experience lists; filters use original project tags.
 Signal puzzle uses a deterministic solvable 3×3 board and native accessible buttons.
 Contact uses mailto/tel and copy; no mail backend, API key or false sent confirmation.
@@ -39,7 +41,8 @@ Contact uses mailto/tel and copy; no mail backend, API key or false sent confirm
 5. Refresh this summary if architecture/routes/constraints change; keep it short.
 
 ## Current verification / known limits
-Seven React/Jest behaviour tests cover content, puzzle, filtering, menu and motion.
+React/Jest tests cover content, puzzle, filtering, menu, sphere modes, atlas navigation
+and mocked WebGL lifecycle. See the latest log entry for the current test count.
 Production build passes with inherited legacy-component warnings. Browser QA blocked
 by managed preview relay timeout; no device/FPS/Lighthouse claims. npm Babel override
 fixes inherited test-tool incompatibility. `scripts/preview.cjs` adapts CRA to preview
@@ -51,4 +54,4 @@ Current employer corrected to Hitachi Digital by the user (bio, experience and h
 `src/data/sphereFacts.js` is the editable fact feed; cite researched claims.
 `src/data/careerChapters.js` maps experience IDs to brand visuals; update it for new jobs.
 Original local company marks and provenance: `public/brands/SOURCES.md`.
-Facts link into the existing homepage journey; no separate journey route yet.
+Facts and the chapter atlas link into the homepage journey; no separate route yet.

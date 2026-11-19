@@ -147,3 +147,27 @@ test("sphere discovers facts without immediate repeats and dismisses accessibly"
   click(document.querySelector('[aria-label="Dismiss fact"]'));
   expect(document.querySelector(".j-discovery")).toBeNull();
 });
+
+test('atlas destinations preview and link to real chapters', () => {
+  render();
+  const nodes = [...container.querySelectorAll('.j-map-node')];
+  expect(nodes).toHaveLength(5);
+  nodes.forEach(node => {
+    click(node);
+    expect(node.getAttribute('aria-pressed')).toBe('true');
+    const href = container.querySelector('.j-atlas-preview a').getAttribute('href');
+    expect(container.querySelector(href)).not.toBeNull();
+  });
+});
+
+test('sphere appearances switch while fact discovery remains available', () => {
+  render();
+  const modes = [...container.querySelectorAll('.j-orbit-modes button')];
+  modes.forEach(button => {
+    click(button);
+    expect(button.getAttribute('aria-pressed')).toBe('true');
+    expect(container.querySelector('.j-orbital-visual').className).toContain(`mode-${button.textContent}`);
+  });
+  click(container.querySelector('.j-sphere-trigger'));
+  expect(document.querySelector('.j-discovery h3')).not.toBeNull();
+});

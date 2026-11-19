@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
+import OrbitalVisual from "./OrbitalVisual";
 import { createPortal } from "react-dom";
 import { sphereFacts, nextFactIndex } from "../../data/sphereFacts";
 
 export default function InteractiveSphere({ paused }) {
+  const [mode, setMode] = useState("orbit");
   const [current, setCurrent] = useState(-1);
   const [open, setOpen] = useState(false);
   const trigger = useRef(null);
@@ -49,7 +51,7 @@ export default function InteractiveSphere({ paused }) {
   }
   return (
     <>
-      <div className="j-orbit-scene">
+      <div className={`j-orbit-scene scene-${mode}`}>
         <div className="j-orbit-grid" aria-hidden="true" />
         <div className="j-orbit-halo" aria-hidden="true" />
         <button
@@ -64,17 +66,27 @@ export default function InteractiveSphere({ paused }) {
           aria-expanded={open}
         >
           <span className="j-orbit-tilt" ref={tilt} aria-hidden="true">
-            <span className="j-sculpture">
-              {Array.from({ length: 16 }, (_, i) => (
-                <span className="j-ring" key={i} style={{ "--ring": i }} />
-              ))}
-              <span className="j-core" />
-            </span>
+            <OrbitalVisual paused={paused} mode={mode} />
           </span>
           <span className="j-sphere-prompt">
             Touch a little curiosity <span aria-hidden="true">＋</span>
           </span>
         </button>
+        <div
+          className="j-orbit-modes"
+          role="group"
+          aria-label="Sphere appearance"
+        >
+          {["orbit", "constellation", "signal"].map((value) => (
+            <button
+              key={value}
+              aria-pressed={mode === value}
+              onClick={() => setMode(value)}
+            >
+              {value}
+            </button>
+          ))}
+        </div>
         <div className="j-coordinate coord-a" aria-hidden="true">
           CRAFT × INTELLIGENCE
         </div>

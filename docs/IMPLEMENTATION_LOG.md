@@ -125,3 +125,47 @@ content/puzzle/filter checks. Preview retry again failed at the managed browser 
 (port 4173 readiness timeout); browser layout/device checks remain unverified.
 `npm run build` passed with only the same three inherited legacy warnings.
 `git diff --check` passed. No production merge or deployment.
+
+## 2026-11-19 — GitHub-researched 3D observatory upgrade
+
+User asked to research open-source 3D/animation websites and make the portfolio richer.
+Read GitHub repository metadata/licenses and relevant source/docs from Bruno Simon,
+Codrops and pmndrs. See `docs/ANIMATION_RESEARCH.md` for exact links, adaptations and
+tradeoffs. No portfolio template, source-demo images or models were copied.
+
+### Implemented
+- Actual progressive WebGL orb: procedural particles, faceted core, wireframe shell,
+  three orbital arcs, background points. Orbit / Constellation / Signal mode buttons.
+- `OrbitalVisual.jsx` lazy-loads `orbitalEngine.js`; CSS sphere remains during loading
+  and on unsupported WebGL, initialization failure, context loss, Save-Data or pause.
+- `JourneyAtlas.jsx`: an original interactive constellation map with five destinations,
+  selected chapter preview and native links to all existing sections. Mobile layout
+  stacks map and preview; keyboard buttons and polite preview announcements retained.
+- Perspective gallery entry using progressive native CSS view timelines, image shine,
+  animated map orbits and reading progress. Motion preference respected throughout.
+- New MIT Three.js dependency pinned at 0.132.2 for CRA 4 compatibility; separated
+  from initial JS. License retained in public/licenses/three-MIT.txt.
+
+### Performance decisions
+One GPU context, no textures/models/postprocessing; <=1.5 DPR; 600/1400 sphere points
+by viewport width; 30fps target; no per-frame React state. Canvas renders only while
+visible and tab active. Resources disposed on pause/unmount/context loss. This
+supersedes the earlier decision to defer WebGL after the user's request for richer 3D.
+
+### Replaced / retained
+CSS-only sphere becomes a fallback; existing pointer/fact interaction retained.
+Project content, Hitachi Digital correction, company marks and all career details
+unchanged. Native scrolling and prior routes retained. No new standalone journey route.
+No framework migration or R3F/GSAP installation. Original yarn.lock retained as legacy;
+npm/package-lock remains the supported dependency path.
+
+### Verification
+Production build passed with the same three inherited warnings. WebGL lifecycle,
+atlas navigation and mode interaction tests added; final results recorded below.
+
+Final verification: 13/13 tests across three suites passed. Production build passed
+(three pre-existing legacy warnings). `git diff --check` passed; biography, experience
+and project data have no changes in this iteration. WebGL lifecycle tests mock the
+renderer boundary: they do not establish actual GPU rendering correctness. Managed
+preview retry failed again at browser relay port 4173 readiness; visual/device QA,
+FPS and thermal/battery measurements remain pending. No merge or deployment.
