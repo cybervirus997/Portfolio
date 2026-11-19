@@ -8,6 +8,8 @@ import { skillsData } from "../../data/skillsData";
 import { contactsData } from "../../data/contactsData";
 import { socialsData } from "../../data/socialsData";
 import "./Journey.css";
+import InteractiveSphere from "./InteractiveSphere";
+import { careerChapters } from "../../data/careerChapters";
 
 const chapters = [
   ["top", "Launch"],
@@ -52,7 +54,17 @@ const roles = [
 ];
 const cv =
   "https://drive.google.com/file/d/1_rWRsYzrj1tr3BlDWrdu99XvnJduHY5p/view?usp=sharing";
-const initialLights = [false, true, false, true, true, true, false, true, false];
+const initialLights = [
+  false,
+  true,
+  false,
+  true,
+  true,
+  true,
+  false,
+  true,
+  false,
+];
 export function toggleLights(board, index) {
   return board.map((on, i) =>
     i === index ||
@@ -327,7 +339,7 @@ export default function Journey() {
             </h1>
             <p>
               I build reliable backends, secure APIs and full-stack products —
-              currently shipping AI-powered experiences at GlobalLogic.
+              currently shipping AI-powered experiences at Hitachi Digital.
             </p>
             <div className="j-actions">
               <a className="j-btn" href="#work">
@@ -338,20 +350,7 @@ export default function Journey() {
               </External>
             </div>
           </div>
-          <div className="j-orbit-scene" aria-hidden="true">
-            <div className="j-orbit-grid" />
-            <div className="j-orbit-halo" />
-            <div className="j-sculpture">
-              {Array.from({ length: 16 }, (_, i) => (
-                <div className="j-ring" key={i} style={{ "--ring": i }} />
-              ))}
-              <div className="j-core" />
-            </div>
-            <div className="j-coordinate coord-a">CRAFT × INTELLIGENCE</div>
-            <div className="j-coordinate coord-b">ALWAYS EXPLORING</div>
-            <span className="j-orbit-dot dot-a" />
-            <span className="j-orbit-dot dot-b" />
-          </div>
+          <InteractiveSphere paused={paused} />
           <div className="j-hero-bottom">
             <span>
               Bengaluru, Karnataka
@@ -449,14 +448,40 @@ export default function Journey() {
           </div>
           <div className="j-timeline">
             {experienceData.map((exp, i) => (
-              <article key={exp.id} className="j-job" data-enter>
+              <article
+                key={exp.id}
+                className={`j-job j-job--${careerChapters[exp.id].brand}`}
+                style={{ "--chapter-color": careerChapters[exp.id].color }}
+                data-enter
+              >
                 <div className="j-job-date">
+                  <a
+                    className={`j-company-logo ${careerChapters[exp.id].brand}`}
+                    href={careerChapters[exp.id].website}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`${exp.company} official website`}
+                  >
+                    <img
+                      src={careerChapters[exp.id].logo}
+                      alt={`${exp.company} logo`}
+                      width="160"
+                      height="72"
+                      loading="lazy"
+                    />
+                  </a>
+                  <p className="j-chapter-label">
+                    {careerChapters[exp.id].label}
+                  </p>
                   <span>
                     {exp.startYear} — {exp.endYear}
                   </span>
                   {i === 0 && <b>Current chapter</b>}
                 </div>
                 <div className="j-job-body">
+                  <div className="j-chapter-focus">
+                    {careerChapters[exp.id].focus}
+                  </div>
                   <h3>{exp.company}</h3>
                   <h4>{exp.jobtitle}</h4>
                   <p className="j-job-location">{exp.location}</p>

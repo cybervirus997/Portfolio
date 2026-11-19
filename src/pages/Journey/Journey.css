@@ -1397,4 +1397,303 @@
     }
   }
 }
-.j-paused .j-hero-copy, .j-paused .j-hero-top { animation: none; }
+.j-paused .j-hero-copy,
+.j-paused .j-hero-top {
+  animation: none;
+}
+
+/* Interactive discovery sphere: events only, no continuous JS render loop. */
+.j-orbit-scene {
+  z-index: 0;
+  pointer-events: none;
+}
+.j-sphere-trigger {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--lime);
+  padding: 0;
+  pointer-events: auto;
+  perspective: 950px;
+  touch-action: manipulation;
+}
+.j-orbit-tilt {
+  display: block;
+  position: absolute;
+  inset: 0;
+  transform-style: preserve-3d;
+  transition: transform 0.25s ease-out;
+}
+.j-sphere-trigger:hover .j-ring,
+.j-sphere-trigger:focus-visible .j-ring {
+  border-color: #e4ff9d;
+}
+.j-sphere-prompt {
+  position: absolute;
+  left: 50%;
+  bottom: -35px;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  border: 1px solid #60753d;
+  background: #141a0fe8;
+  border-radius: 30px;
+  padding: 10px 18px;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+}
+.j-sphere-prompt span {
+  padding-left: 12px;
+}
+.j-discovery {
+  position: fixed;
+  z-index: 100;
+  bottom: 24px;
+  right: 24px;
+  width: min(410px, calc(100vw - 32px));
+  max-height: calc(100svh - 48px);
+  overflow: auto;
+  border: 1px solid #8caa50;
+  border-radius: 12px;
+  padding: 20px 24px;
+  background: #192113;
+  color: #f0eee8;
+  box-shadow: 0 18px 70px #0008;
+  font:
+    16px/1.6 "Space Grotesk",
+    sans-serif;
+  animation: discovery-in 0.3s ease-out;
+}
+.j-discovery-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  color: #d4fa67;
+  font:
+    0.7rem "JetBrains Mono",
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.j-discovery button {
+  cursor: pointer;
+  font: inherit;
+}
+.j-discovery-top button {
+  background: none;
+  border: 0;
+  color: #e2ecd5;
+  font-size: 24px;
+  min-width: 44px;
+  min-height: 44px;
+}
+.j-discovery h3 {
+  font-size: 1.3rem;
+  line-height: 1.3;
+  margin: 10px 0;
+}
+.j-discovery p {
+  color: #c4cbb9;
+  margin: 0;
+  font-size: 0.9rem;
+}
+.j-discovery-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  margin-top: 20px;
+}
+.j-discovery-actions a {
+  color: #d4fa67;
+  font-size: 0.8rem;
+  text-underline-offset: 4px;
+}
+.j-discovery-actions button {
+  border: 1px solid #5a703a;
+  border-radius: 6px;
+  background: #24301a;
+  color: #f0eee8;
+  font-size: 0.8rem;
+  padding: 10px 13px;
+}
+.j-discovery :focus-visible {
+  outline: 2px solid #d4fa67;
+  outline-offset: 4px;
+}
+.j-discovery.is-still {
+  animation: none;
+}
+@keyframes discovery-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Career chapters: original marks, quiet brand colours, a connected story. */
+.j-timeline {
+  position: relative;
+}
+.j-job {
+  border: 1px solid #333d2c;
+  border-left: 3px solid var(--chapter-color);
+  border-radius: 12px;
+  padding: 38px;
+  margin-bottom: 28px;
+  position: relative;
+  background: linear-gradient(120deg, #20271a, #131710 70%);
+  transition:
+    border-color 0.3s,
+    transform 0.3s;
+}
+.j-job::after {
+  content: "";
+  position: absolute;
+  left: 36px;
+  bottom: -29px;
+  height: 28px;
+  width: 1px;
+  background: var(--chapter-color);
+  opacity: 0.5;
+}
+.j-job:last-child::after {
+  display: none;
+}
+.j-job:hover {
+  border-left-color: var(--chapter-color);
+  transform: translateY(-3px);
+}
+.j-company-logo {
+  width: 160px;
+  height: 80px;
+  display: grid;
+  place-items: center;
+  background: #fff;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 28px;
+  overflow: hidden;
+}
+.j-company-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.j-company-logo.oolka {
+  background: #6234a6;
+}
+.j-company-logo.oolka img {
+  width: 48px;
+  height: 48px;
+}
+.j-company-logo.trinkerr {
+  background: #fff;
+}
+.j-company-logo.trinkerr img {
+  width: 56px;
+  height: 56px;
+}
+.j-company-logo.ecil {
+  width: 88px;
+  height: 88px;
+  padding: 0;
+}
+.j-company-logo.ecil img {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  object-position: left;
+}
+.j-job .j-chapter-label {
+  color: var(--chapter-color);
+  font:
+    1rem/1.4 "Space Grotesk",
+    sans-serif;
+  margin: 0 0 18px;
+  letter-spacing: -0.02em;
+}
+.j-chapter-focus {
+  color: var(--chapter-color);
+  font:
+    0.7rem/1.6 "JetBrains Mono",
+    monospace;
+  margin-bottom: 15px;
+  letter-spacing: 0.04em;
+}
+.j-job h4,
+.j-job-date b {
+  color: var(--chapter-color);
+}
+.j-job details {
+  border-top: 1px solid #3a4530;
+}
+.j-job details[open] summary {
+  color: var(--chapter-color);
+}
+@media (min-width: 1600px) {
+  .j-sphere-trigger {
+    width: 500px;
+    height: 500px;
+  }
+}
+@media (max-width: 1100px) {
+  .j-sphere-trigger {
+    width: 350px;
+    height: 350px;
+  }
+  .j-job {
+    padding: 28px;
+  }
+}
+@media (max-width: 760px) {
+  .j-sphere-trigger {
+    width: 260px;
+    height: 260px;
+  }
+  .j-sphere-prompt {
+    bottom: -24px;
+    font-size: 0.75rem;
+  }
+  .j-orbit-scene .coord-b {
+    display: none;
+  }
+  .j-job {
+    padding: 26px;
+  }
+  .j-company-logo {
+    margin-bottom: 20px;
+  }
+  .j-job .j-job-date b {
+    display: block;
+    margin: 10px 0 0;
+  }
+}
+@media (max-width: 480px) {
+  .j-job {
+    padding: 22px;
+  }
+  .j-discovery {
+    bottom: 16px;
+    right: 16px;
+    padding: 16px 20px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .j-discovery {
+    animation: none;
+  }
+  .j-orbit-tilt {
+    transform: none !important;
+  }
+}

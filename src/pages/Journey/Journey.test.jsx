@@ -112,3 +112,38 @@ test("filter and motion controls update without blocking content", () => {
     "false",
   );
 });
+
+test("current employer is updated and each career chapter has a logo", () => {
+  render();
+  expect(container.textContent).toContain("Hitachi Digital");
+  expect(container.textContent).not.toContain("GlobalLogic");
+  expect(container.querySelectorAll(".j-company-logo img")).toHaveLength(4);
+});
+
+test("sphere discovers facts without immediate repeats and dismisses accessibly", () => {
+  render();
+  const sphere = container.querySelector(".j-sphere-trigger");
+  click(sphere);
+  const firstTitle = document.querySelector(".j-discovery h3").textContent;
+  expect(sphere.getAttribute("aria-expanded")).toBe("true");
+  click(document.querySelector(".j-discovery-actions button"));
+  expect(document.querySelector(".j-discovery h3").textContent).not.toBe(
+    firstTitle,
+  );
+  expect(
+    document.querySelector(".j-discovery a").getAttribute("href"),
+  ).toBeTruthy();
+  act(() => {
+    document.dispatchEvent(new KeyboardEvent("keydown", { key: "Escape" }));
+  });
+  expect(document.querySelector(".j-discovery")).toBeNull();
+  expect(document.activeElement).toBe(sphere);
+  expect(sphere.getAttribute("aria-expanded")).toBe("false");
+  click(container.querySelector(".j-motion"));
+  click(sphere);
+  expect(
+    document.querySelector(".j-discovery").classList.contains("is-still"),
+  ).toBe(true);
+  click(document.querySelector('[aria-label="Dismiss fact"]'));
+  expect(document.querySelector(".j-discovery")).toBeNull();
+});

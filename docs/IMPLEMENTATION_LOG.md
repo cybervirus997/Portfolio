@@ -82,3 +82,46 @@ attempt to rewrite those unrelated components. Older external project demo URLs
 are preserved and have not all been availability-tested. Contact depends on a local
 mail client; clipboard failure has a visible fallback. GitHub branch only; no merge
 or production deployment performed.
+
+## 2026-11-19 — Branded career chapters and an interactive discovery sphere
+
+### Requested correction
+Changed current employer to **Hitachi Digital** in experienceData, aboutData,
+Journey hero and legacy HeroV2. Replaced its old logo reference. This is an explicit
+user-approved content correction; dates, role, clients and accomplishments stay intact.
+The official current brand was checked at https://www.hitachidigital.com/.
+
+### Implemented
+- Career chapters now have original local company marks, brand-coloured accents,
+  connected cards, descriptive chapter titles and focus labels drawn from existing
+  experience. Existing expandable highlights and grouped roles remain unchanged.
+- Visual metadata is separate in `src/data/careerChapters.js`, keyed by experience ID.
+  Add a metadata entry when adding a new job. Original marks/provenance are recorded
+  in `public/brands/SOURCES.md`; assets were visually inspected.
+- Replaced decorative aria-hidden sphere with `InteractiveSphere.jsx`: native button,
+  pointer-reactive tilt, tap/Enter/Space activation, fact card, another-fact action,
+  sources/chapter links, dismiss button and Escape with focus return.
+- Facts live in `src/data/sphereFacts.js`. Add `{id, category, title, text, href, source}`;
+  cite external claims, use unique IDs, and keep copy concise. Random selection excludes
+  the previous fact. No server, API calls, credentials, timer or persistence needed.
+- Seed facts use existing portfolio content plus paraphrased facts checked against
+  [NASA](https://science.nasa.gov/sun/facts/) and
+  [MDN](https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API).
+- Fact card stays open until dismissed or an internal chapter link is used, allowing
+  reading at the visitor's pace. Polite screen-reader announcement does not steal focus.
+- Pointer tilt is scheduled once per animation frame only on pointer events; reduced
+  motion/pause disables it. Touch keeps normal page scrolling. Portal avoids clipping
+  the toast in the hero. Existing offscreen sphere animation pause stays in place.
+
+### Decisions / scope
+No separate journey route was added: the interactive sphere enriches the current
+homepage journey and facts can link to its chapters. A standalone exploration page
+remains a later extension. No drag-to-spin gesture, WebGL runtime or generated logo.
+
+### Verification
+7/7 tests pass across two suites, including no stale employer name, four logo images,
+fact dismissal/focus return, motion-off discovery, non-repeating selection and existing
+content/puzzle/filter checks. Preview retry again failed at the managed browser relay
+(port 4173 readiness timeout); browser layout/device checks remain unverified.
+`npm run build` passed with only the same three inherited legacy warnings.
+`git diff --check` passed. No production merge or deployment.
