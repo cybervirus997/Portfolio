@@ -1,12 +1,12 @@
 export const experienceData = [
     {
         id: 1,
-        company: 'GlobalLogic (Hitachi Group)',
+        company: 'Hitachi Digital',
         jobtitle: 'Senior Software Engineer',
         startYear: 'May 2025',
         endYear: 'Present',
         location: 'Bengaluru, Karnataka, India · Hybrid',
-        logo: 'https://media.licdn.com/dms/image/v2/D560BAQEcwaYik2791g/company-logo_100_100/B56ZV9kVCfHoAQ-/0/1741568430537/globallogic_logo',
+        logo: '/brands/hitachi.png',
         description: 'Senior Software Engineer - Full-time',
         clients: 'Cengage Group & FIS (Fidelity Information Services)',
         skills: ['React', 'React Native', 'TypeScript', 'OpenAI API', 'LLM Streaming', 'Deepgram STT', 'AI'],

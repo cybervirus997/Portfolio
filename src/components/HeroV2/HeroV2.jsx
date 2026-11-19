@@ -58,7 +58,7 @@ function HeroV2() {
             Purohit<span className="pf-accent-dot">.</span>
           </h1>
           <p className="pf-hero__sub">
-            I build reliable backends, secure APIs and full-stack products — currently shipping AI-powered experiences at GlobalLogic.
+            I build reliable backends, secure APIs and full-stack products — currently shipping AI-powered experiences at Hitachi Digital.
           </p>
           <div className="pf-hero__typer">
             <span className="pf-hero__prompt">&gt; </span>
